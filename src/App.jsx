@@ -1,6 +1,6 @@
 import { useState, useEffect, useRef } from 'react'
 import { supabase } from './lib/supabase'
-import boagLogo from './assets/logo.png'
+import boagLogo from './logo.png'
 
 // ─── Constants ───────────────────────────────────────────────
 const COMPANIES = [
