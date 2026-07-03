@@ -21,7 +21,7 @@ export default async function handler(req, res) {
             isPdf
               ? { type: 'document', source: { type: 'base64', media_type: 'application/pdf', data: base64Data } }
               : { type: 'image', source: { type: 'base64', media_type: mediaType, data: base64Data } },
-            { type: 'text', text: 'Detta är en leverantörsfaktura. Läs av och returnera ENDAST ett JSON-objekt utan markdown, i exakt detta format: {"leverantor": "företagsnamn", "fakturanummer": "fakturanr om det finns annars tom sträng", "datum": "YYYY-MM-DD fakturadatum", "belopp": totalbelopp_inkl_moms_som_nummer_utan_text, "beskrivning": "kort sammanfattning av vad fakturan avser"}' }
+            { type: 'text', text: 'Detta är en leverantörsfaktura. Läs av och returnera ENDAST ett JSON-objekt utan markdown, i exakt detta format: {"leverantor": "företagsnamn", "fakturanummer": "fakturanr om det finns annars tom sträng", "datum": "YYYY-MM-DD fakturadatum", "belopp": beloppet exklusive moms som nummer utan text (om fakturan bara visar totalsumma inklusive moms, dra bort momsen), "beskrivning": "kort sammanfattning av vad fakturan avser"}' }
           ]
         }]
       })
